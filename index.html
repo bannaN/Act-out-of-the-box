@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Act-out-of-the-box by Act-Voyager</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Act-out-of-the-box</h1>
+        <h2>Start hacking on Act-Voyager out of the box, using Vagrant and Virtualbox</h2>
+        <a href="https://github.com/Act-Voyager/Act-out-of-the-box" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="act-out-of-the-box" class="anchor" href="#act-out-of-the-box"><span class="octicon octicon-link"></span></a>Act out of the box</h1>
+
+<p>In the final stage, as described at hacking on Act will start as simple as:</p>
+
+<pre><code>git clone https:/github.com/Act-Voyager/Act-out-of-the-box.git
+vagrant up
+vagrant ssh
+</code></pre>
+
+<p>For more details, see the seven-step instructions below.</p>
+
+<h1>
+<a name="how-to-contribute" class="anchor" href="#how-to-contribute"><span class="octicon octicon-link"></span></a>How to contribute</h1>
+
+<p>Contributions are more than welcome at any time!</p>
+
+<p>There are some issues that will show up but it seems we can work arround them,
+but it would be better if those were not there in the firstplace. Please go to
+<a href="https://github.com/Act-Voyager/Act-out-of-the-box/issues">https://github.com/Act-Voyager/Act-out-of-the-box/issues</a> for any troubles and
+commit your changes.</p>
+
+<p>For any suggestions or issues concerning the base install of the box, visit
+the repository on: <a href="https://github.com/THEMA-MEDIA/Act-out-of-the-box">https://github.com/THEMA-MEDIA/Act-out-of-the-box</a></p>
+
+<h1>
+<a name="about-the-repository" class="anchor" href="#about-the-repository"><span class="octicon octicon-link"></span></a>About the repository</h1>
+
+<p>This Vagrant Bootloading script installs the following:</p>
+
+<ul>
+<li>Act Voyager</li>
+<li>Apache httpd config</li>
+<li>A $HOME/voyager event directory</li>
+</ul>
+
+<h1>
+<a name="setup--installation" class="anchor" href="#setup--installation"><span class="octicon octicon-link"></span></a>Setup / Installation</h1>
+
+<p>0) Install VirtualBox and Vagrant, visit the following websites to download
+   your specific OS installers:</p>
+
+<ul>
+<li><a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></li>
+<li>
+<p><a href="https://www.vagrantup.com/downloads.html">https://www.vagrantup.com/downloads.html</a></p>
+
+<p>Or on Ubunto, run</p>
+
+<p>$ apt-get install vagrant virtualbox</p>
+</li>
+</ul>
+
+<p>1) Clone Act-out-of-the-box Vagrant File from your favourite github account to
+   your work directory on your host system. (Optionally, consider forking
+   the project on github and clone that one instead.)</p>
+
+<pre><code>$ git clone https://github.com/Act-Voyager/Act-out-of-the-box.git
+</code></pre>
+
+<p>3) Optionally, edit the Vagrantfile field for config.vm.network ip
+   address to suit your needs. By default, the VM is set up to use DHCP
+   to get an IP address. You can override this by uncommenting the
+   following line in Vagrantfile:</p>
+
+<pre><code>config.vm.network: "private_network", ip: "192.168.42.42"
+</code></pre>
+
+<p>5) Run "vagrant up". This downloads the required image and set up
+   your Act instance.</p>
+
+<pre><code>$ vagrant up
+</code></pre>
+
+<p>6) Log into the VM to start Act setup process</p>
+
+<pre><code>$ vagrant ssh
+</code></pre>
+
+<p>7) Start hacking!</p>
+
+<h1>
+<a name="vagrantfile" class="anchor" href="#vagrantfile"><span class="octicon octicon-link"></span></a>VagrantFile</h1>
+
+<p>This VagrantFile mainly does the final install of Act, more specific,
+Act-Voyager. </p>
+
+<h1>
+<a name="known-issues" class="anchor" href="#known-issues"><span class="octicon octicon-link"></span></a>Known Issues</h1>
+
+<ul>
+<li><p>cpanm fails the first time, possibly due to an Unicode charater in the name
+of the Author: 'Éric Cholet'</p></li>
+<li><p>domain name for Apache is not qualified</p></li>
+<li><p>missing setup</p></li>
+</ul>
+
+<h1>
+<a name="acknowledgements" class="anchor" href="#acknowledgements"><span class="octicon octicon-link"></span></a>Acknowledgements</h1>
+
+<p>Thanks to Alex Muntada, Detlev Hauschildt for install clarifications
+on Act itself. The original documentation might need some polishing.</p>
+
+<p>Thanks for Salve J. Nilsen for checking and editing where needed</p>
+
+<h1>
+<a name="copyright--license" class="anchor" href="#copyright--license"><span class="octicon octicon-link"></span></a>Copyright &amp; License</h1>
+
+<p>(c) 2014 THEMA-MEDIA Th.J. van Hoesel</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/Act-Voyager/Act-out-of-the-box/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/Act-Voyager/Act-out-of-the-box/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/Act-Voyager/Act-out-of-the-box"></a> is maintained by <a href="https://github.com/Act-Voyager">Act-Voyager</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
